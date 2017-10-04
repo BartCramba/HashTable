@@ -16,10 +16,15 @@ class HashTable {
 public:
 	// Constructor
 	HashTable();
+	// Add a string into the hash table
+	void put(string name);
 	// Destructor
 	virtual ~HashTable();
 private:
-	SinglyLinkedList::SinglyLinkedList array[10];
+	// Size of the array declared as a class variable
+	static const int ARRAY_SIZE = 10;
+	// Array of linked list, separate chaining method for collision resolution
+	SinglyLinkedList::SinglyLinkedList array[ARRAY_SIZE];
 };
 
 } /* namespace HashTable */
