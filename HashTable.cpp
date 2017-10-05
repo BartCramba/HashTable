@@ -6,26 +6,24 @@
 
 #include "HashTable.h"
 
-namespace HashTable {
-
 // Constructor
 HashTable::HashTable() {
 	// TODO Auto-generated constructor stub
 
 }
 
-void HashTable::put(string name) {
+void HashTable::put(string ownerName, const Dog& dog) {
 	// Creates a hash object using standard library
 	hash<string> stringHash;
 
 	// Retrieves the hash value
-	size_t hashValue = stringHash(name);
+	size_t hashValue = stringHash(ownerName);
 
 	// Converts the hash value into an array index
 	int index = hashValue % ARRAY_SIZE;
 
 	// Adds the name into the array
-	array[index].add(name);
+	array[index].add(ownerName, dog);
 }
 
 // Destructor
@@ -33,4 +31,3 @@ HashTable::~HashTable() {
 	// TODO Auto-generated destructor stub
 }
 
-} /* namespace HashTable */

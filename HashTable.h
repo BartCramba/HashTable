@@ -7,17 +7,16 @@
 #ifndef HASHTABLE_H_
 #define HASHTABLE_H_
 #include "SinglyLinkedList.h"
+#include "Dog.h"
 #include <iostream>
 using namespace std;
-
-namespace HashTable {
 
 class HashTable {
 public:
 	// Constructor
 	HashTable();
 	// Add a string into the hash table
-	void put(string name);
+	void put(string ownerName, const Dog& dog);
 	// Destructor
 	virtual ~HashTable();
 private:
@@ -26,7 +25,5 @@ private:
 	// Array of linked list, separate chaining method for collision resolution
 	SinglyLinkedList::SinglyLinkedList array[ARRAY_SIZE];
 };
-
-} /* namespace HashTable */
 
 #endif /* HASHTABLE_H_ */

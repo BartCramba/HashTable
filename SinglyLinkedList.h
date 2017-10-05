@@ -8,19 +8,24 @@
 #ifndef SINGLYLINKEDLIST_H_
 #define SINGLYLINKEDLIST_H_
 #include <iostream>
+
+#include "Dog.h"
 using namespace std;
 
 namespace SinglyLinkedList {
 
 // Represents a node in the linked list
 struct Node {
-	// Data for our node
+	// Owners name
 	string name;
+	// Dog object
+	Dog dog;
 	// Pointer to the next node
 	Node *next;
 	// Constructor method
-	Node(string name, Node *next = NULL) {
+	Node(string name, Dog dog, Node *next = NULL) {
 		this->name = name;
+		this->dog = dog;
 		this->next = next;
 	}
 };
@@ -30,7 +35,7 @@ public:
 	// Default Constructor
 	SinglyLinkedList();
 	// Adds a new node with given name into the linked list
-	void add(string name);
+	void add(string name, const Dog& dog);
 	// Removes a node by name from the linked list
 	void remove(string name);
 	// Displays the list values to the screen

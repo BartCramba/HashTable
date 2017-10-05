@@ -15,11 +15,11 @@ SinglyLinkedList::SinglyLinkedList() {
 }
 
 // Adds a new node with given name into the linked list
-void SinglyLinkedList::add(string name) {
+void SinglyLinkedList::add(string name, const Dog& dog) {
 	// Check to see if we have an empty list
 	if(head == NULL) {
 		// Set head pointer to newly created node
-		head = new Node(name);
+		head = new Node(name, dog);
 	}
 	// Else if the list is not empty
 	else {
@@ -30,7 +30,7 @@ void SinglyLinkedList::add(string name) {
 			temp = temp->next;
 		}
 		// Now at the last element in the list, add new node to the end
-		temp->next = new Node(name);
+		temp->next = new Node(name, dog);
 	}
 }
 
@@ -75,7 +75,7 @@ void SinglyLinkedList::displayList() {
 	if(temp != NULL) {
 		// Traverses the list and displays values
 		while(temp) {
-			cout << temp->name << " ";
+			cout << temp->name << " has a dog named " << temp->dog.getName() << endl;
 			temp = temp->next;
 		}
 		cout << endl;
