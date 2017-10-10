@@ -7,7 +7,6 @@
 #ifndef HASHTABLE_H_
 #define HASHTABLE_H_
 #include "SinglyLinkedList.h"
-#include "Dog.h"
 #include <iostream>
 using namespace std;
 
@@ -16,7 +15,7 @@ public:
 	// Constructor
 	HashTable();
 	// Add a string into the hash table
-	void put(string ownerName, const Dog& dog);
+	void put(string key, string value);
 	// Destructor
 	virtual ~HashTable();
 private:

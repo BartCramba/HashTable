@@ -12,18 +12,18 @@ HashTable::HashTable() {
 
 }
 
-void HashTable::put(string ownerName, const Dog& dog) {
+void HashTable::put(string key, string value) {
 	// Creates a hash object using standard library
 	hash<string> stringHash;
 
 	// Retrieves the hash value
-	size_t hashValue = stringHash(ownerName);
+	size_t hashValue = stringHash(key);
 
 	// Converts the hash value into an array index
 	int index = hashValue % ARRAY_SIZE;
 
 	// Adds the name into the array
-	array[index].add(ownerName, dog);
+	array[index].add(key, value);
 }
 
 // Destructor

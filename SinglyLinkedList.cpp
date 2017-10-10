@@ -15,11 +15,11 @@ SinglyLinkedList::SinglyLinkedList() {
 }
 
 // Adds a new node with given name into the linked list
-void SinglyLinkedList::add(string name, const Dog& dog) {
+void SinglyLinkedList::add(string key, string value) {
 	// Check to see if we have an empty list
 	if(head == NULL) {
 		// Set head pointer to newly created node
-		head = new Node(name, dog);
+		head = new Node(key, value);
 	}
 	// Else if the list is not empty
 	else {
@@ -30,19 +30,19 @@ void SinglyLinkedList::add(string name, const Dog& dog) {
 			temp = temp->next;
 		}
 		// Now at the last element in the list, add new node to the end
-		temp->next = new Node(name, dog);
+		temp->next = new Node(key, value);
 	}
 }
 
 // Removes a node by name from the linked list
-void SinglyLinkedList::remove(string name) {
+void SinglyLinkedList::remove(string key) {
 	Node *temp = head;
 	Node *prev = NULL;
 
 	// Checks to see if a list exists
 	if(head) {
 		// Checks if the head is the element to be removed
-		if(head->name == name) {
+		if(head->key == key) {
 			// Moves head over to the next node in the list
 			head = head->next;
 			// Deletes the matched node
@@ -51,7 +51,7 @@ void SinglyLinkedList::remove(string name) {
 		// Else checks the rest of the linked list
 		else {
 			// Traverse through the list
-			while(temp != NULL && temp->name != name) {
+			while(temp != NULL && temp->key != key) {
 				// Moves pointers to next nodes
 				prev = temp;
 				temp = temp->next;
@@ -75,7 +75,8 @@ void SinglyLinkedList::displayList() {
 	if(temp != NULL) {
 		// Traverses the list and displays values
 		while(temp) {
-			cout << temp->name << " has a dog named " << temp->dog.getName() << endl;
+			cout << "key: " << temp->key << endl;
+			cout << "value: " << temp->value << endl;
 			temp = temp->next;
 		}
 		cout << endl;
