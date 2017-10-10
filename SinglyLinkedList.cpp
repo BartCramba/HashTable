@@ -63,6 +63,7 @@ void SinglyLinkedList::remove(string key) {
 			}
 		}
 	}
+	// The list is empty
 	else {
 		cout << "Error: Linked list is empty." << endl;
 	}
