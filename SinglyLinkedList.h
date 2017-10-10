@@ -10,8 +10,6 @@
 #include <iostream>
 using namespace std;
 
-namespace SinglyLinkedList {
-
 // Represents a node in the linked list
 struct Node {
 	// Key
@@ -32,9 +30,9 @@ class SinglyLinkedList {
 public:
 	// Default Constructor
 	SinglyLinkedList();
-	// Adds a new node with given name into the linked list
+	// Adds a new node with given key/value into the linked list
 	void add(string key, string value);
-	// Removes a node by name from the linked list
+	// Removes a node by key/value from the linked list
 	void remove(string key);
 	// Displays the list values to the screen
 	void displayList();
@@ -44,7 +42,5 @@ private:
 	// Pointer to a node
 	Node *head;
 };
-
-} /* namespace SinglyLinkedList */
 
 #endif /* SINGLYLINKEDLIST_H_ */

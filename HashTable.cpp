@@ -13,7 +13,7 @@ HashTable::HashTable() {
 }
 
 void HashTable::put(string key, string value) {
-	// Creates a hash object using standard library
+	// Creates a hash object
 	hash<string> stringHash;
 
 	// Retrieves the hash value
@@ -22,8 +22,22 @@ void HashTable::put(string key, string value) {
 	// Converts the hash value into an array index
 	int index = hashValue % ARRAY_SIZE;
 
-	// Adds the name into the array
+	// Adds the entry into the bucket
 	array[index].add(key, value);
+}
+
+void HashTable::remove(string key) {
+	// Create a hash object
+	hash<string> stringHash;
+
+	// Retrieves the hash value
+	size_t hashValue = stringHash(key);
+
+	// Converts the hash value into an array index
+	int index = hashValue % ARRAY_SIZE;
+
+	// Removes the node if it exists in the bucket
+	array[index].remove(key);
 }
 
 // Destructor

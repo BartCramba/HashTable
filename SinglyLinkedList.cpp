@@ -7,14 +7,12 @@
 
 #include "SinglyLinkedList.h"
 
-namespace SinglyLinkedList {
-
 // Default constructor
 SinglyLinkedList::SinglyLinkedList() {
 	head = NULL;
 }
 
-// Adds a new node with given name into the linked list
+// Adds a new node with given key/value into the linked list
 void SinglyLinkedList::add(string key, string value) {
 	// Check to see if we have an empty list
 	if(head == NULL) {
@@ -34,7 +32,7 @@ void SinglyLinkedList::add(string key, string value) {
 	}
 }
 
-// Removes a node by name from the linked list
+// Removes a node by key from the linked list
 void SinglyLinkedList::remove(string key) {
 	Node *temp = head;
 	Node *prev = NULL;
@@ -56,7 +54,7 @@ void SinglyLinkedList::remove(string key) {
 				prev = temp;
 				temp = temp->next;
 			}
-			// If temp exists, this means its name matches parameter name
+			// If temp exists, this means its key matches parameter key
 			if(temp) {
 				// Links the previous node, to the next next node
 				prev->next = temp->next;
@@ -64,6 +62,9 @@ void SinglyLinkedList::remove(string key) {
 				delete temp;
 			}
 		}
+	}
+	else {
+		cout << "Error: Linked list is empty." << endl;
 	}
 }
 
@@ -73,7 +74,7 @@ void SinglyLinkedList::displayList() {
 	Node *temp = head;
 	// If the linked list has at least one node
 	if(temp != NULL) {
-		// Traverses the list and displays values
+		// Traverses the list and displays keys and values
 		while(temp) {
 			cout << "key: " << temp->key << endl;
 			cout << "value: " << temp->value << endl;
@@ -83,7 +84,7 @@ void SinglyLinkedList::displayList() {
 	}
 	// Else the list is empty
 	else {
-		cout << "The list is empty!" << endl;
+		cout << "Error: Linked list is empty." << endl;
 	}
 }
 
@@ -101,5 +102,3 @@ SinglyLinkedList::~SinglyLinkedList() {
 		delete nodeToDelete;
 	}
 }
-
-} /* namespace SinglyLinkedList */

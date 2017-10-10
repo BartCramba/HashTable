@@ -9,7 +9,7 @@ int main() {
 	// Creates a hash table
 	HashTable hashTable;
 
-	// Adds names to the hash table
+	// Adds entries to the hash table
 	hashTable.put("Payaam", "Chester");
 	hashTable.put("Phillis", "Luna");
 	hashTable.put("Stanley", "Ty");
