@@ -12,14 +12,14 @@ using namespace std;
 
 class HashTable {
 public:
-	// Constructor
-	HashTable();
 	// Add an entry in the hash table
-	void put(string key, string value);
+	void insert(string key, string value);
 	// Remove an entry in the hash table
 	void remove(string key);
-	// Destructor
-	virtual ~HashTable();
+	// Searches and returns the value associated by parameter key
+	string search(string key);
+	// Generates a hash based on the key and calculates an index
+	int getHashIndex(string key);
 private:
 	// Size of the array declared as a class variable
 	static const int ARRAY_SIZE = 10;

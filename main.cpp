@@ -10,13 +10,23 @@ int main() {
 	HashTable hashTable;
 
 	// Adds entries to the hash table
-	hashTable.put("Payaam", "Chester");
-	hashTable.put("Phillis", "Luna");
-	hashTable.put("Stanley", "Ty");
-	hashTable.put("Dwight", "Maya");
-	hashTable.put("Jim", "Luther");
-	hashTable.put("Pam", "Luke");
-	hashTable.put("Michael","Whiskey");
+	hashTable.insert("Payaam", "Chester");
+	hashTable.insert("Phillis", "Luna");
+	hashTable.insert("Stanley", "Ty");
+	hashTable.insert("Dwight", "Maya");
+	hashTable.insert("Jim", "Luther");
+	hashTable.insert("Pam", "Luke");
+	hashTable.insert("Michael","Whiskey");
+
+	// Searches for specific values
+	cout << hashTable.search("Payaam") << endl;
+	cout << hashTable.search("Jim") << endl;
+
+	// Removes entries from hash table
+	hashTable.remove("Payaam");
+
+	// Searches for specific values
+	cout << hashTable.search("Payaam") << endl;
 
 	return 0;
 }

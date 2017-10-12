@@ -31,9 +31,11 @@ public:
 	// Default Constructor
 	SinglyLinkedList();
 	// Adds a new node with given key/value into the linked list
-	void add(string key, string value);
+	void insert(string key, string value);
 	// Removes a node by key/value from the linked list
 	void remove(string key);
+	// Searches the linked list by key to return value
+	string search(string key);
 	// Displays the list values to the screen
 	void displayList();
 	// Destructor

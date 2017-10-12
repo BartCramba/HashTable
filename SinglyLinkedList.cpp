@@ -13,7 +13,7 @@ SinglyLinkedList::SinglyLinkedList() {
 }
 
 // Adds a new node with given key/value into the linked list
-void SinglyLinkedList::add(string key, string value) {
+void SinglyLinkedList::insert(string key, string value) {
 	// Check to see if we have an empty list
 	if(head == NULL) {
 		// Set head pointer to newly created node
@@ -67,6 +67,31 @@ void SinglyLinkedList::remove(string key) {
 	else {
 		cout << "Error: Linked list is empty." << endl;
 	}
+}
+
+// Searches the linked list by key to return value
+string SinglyLinkedList::search(string key) {
+	Node *temp = head;
+	string value = "";
+
+	// Checks to see if a list exists
+	if(head) {
+		// Traverse through the list
+		while(temp != NULL && temp->key != key) {
+			temp = temp->next;
+		}
+
+		// If temp exists, this means its key matches parameter key
+		if(temp) {
+			value = temp->value;
+		}
+	}
+	// The list is empty
+	else {
+		cout << "Error: Linked list is empty." << endl;
+	}
+
+	return value;
 }
 
 // Displays the linked list values to the screen
